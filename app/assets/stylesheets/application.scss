@@ -19,7 +19,10 @@
 
 @import "font-awesome";
 
-
+body {
+    background-image: url(airplane.jpg) no-repeat center fixed; 
+    background-size: cover;
+}
 
 
 h1, h2, h3, h4, h5, h6 {
