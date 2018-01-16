@@ -1,0 +1,51 @@
+
+  <div class="jumbotron">
+    
+      <h1>Spa Kit Products</h1>
+      <h2>Made with natural ingredients!</h2>
+  </div>
+
+
+  <div class="col-md-4">
+    <div class="panel-body">
+      <%= image_tag "pic2.jpg", :size => "350x450" %>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="panel-body">
+      <h1>Make time for rest and relaxation with one of our Hydro-Therapy Spa Kits!</h1>
+    </div>
+  </div>
+
+  <div class="col-md-4">
+    <div class="panel-body">
+      <%= image_tag "pic1.jpg", :size => "350x450" %>
+    </div>
+  </div>
+
+<div class="row">
+<% @products.each do |product| %>
+<div class="col-md-6">
+  <div class="well center-it">
+  	<h2><%= product.name%></h2>
+  	<p>
+  		<%= product.description %>
+  	</p>
+  	
+    Price: <%= number_to_currency product.price %> <br>
+    
+    
+      <p>
+      <%= form_tag add_to_cart_path do %>
+      <%= hidden_field_tag :product_id, product.id %>
+      <%= number_field_tag :quantity, placeholder: "How many?" %>
+      <%= submit_tag "Add to Cart", class: "btn btn-primary" %>
+      <% end %>
+      </p>
+      </div>
+    </div>
+
+
+
+<% end %>
+</div>
