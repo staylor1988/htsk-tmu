@@ -26,13 +26,13 @@
 <div class="row">
   <% @products.each do |product| %>
     <div class="col-md-6">
-     <tbody>
+  <!--   <tbody>
     
-      <div class="well center-it">
-        <tr> 
+      <div class="well center-it"> 
+        <tr>  -->
             <h2><%= product.name %></h2>   
-            <td><%= product.description %></td><br>
-            <td>Price: <%= number_to_currency product.price %> </td><br>
+            <p><%= product.description %></p><br>
+            <p>Price: <%= number_to_currency product.price %></p><br>
 
             <p>
               <%= form_tag add_to_cart_path do %>
@@ -45,9 +45,9 @@
                </div>
               <% end %>
             </p>
-        </tr>
-      </div> 
-     </tbody>  
+    <!--    </tr>
+      </div>
+     </tbody>   -->
    </div> 
   <% end %>
 </div>
