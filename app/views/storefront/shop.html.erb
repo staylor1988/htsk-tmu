@@ -22,28 +22,32 @@
       </div>
     </div>
   </div>
-    <div class="row">
-      <% @products.each do |product| %>
-        <div class="col-md-6">
-          <div class="well center-it">
-  	        <h2><%= product.name%></h2>
-  	          <p>
-  		          <%= product.description %>
-  	          </p>
-  	
-                 Price: <%= number_to_currency product.price %> <br>
+
+<div class="row">
+  <% @products.each do |product| %>
+    <div class="col-md-6">
+     <tbody>
     
-                    <p>
-                      <%= form_tag add_to_cart_path do %>
-                      <%= hidden_field_tag :product_id, product.id %>
-                      <%= number_field_tag :quantity, placeholder: "How many?" %>
-                      <%= submit_tag "Add to Cart", class: "btn btn-primary" %>
-                    </p>
-          </div>
-        </div>
-      <% end %>
-                    
-          
-        
-      <% end %>
-    </div>
+      <div class="well center-it">
+        <tr> 
+            <h2><%= product.name %></h2>   
+            <td><%= product.description %></td><br>
+            <td>Price: <%= number_to_currency product.price %> </td><br>
+
+            <p>
+              <%= form_tag add_to_cart_path do %>
+               <div class="input-group">
+                <%= number_field_tag :quantity, placeholder: "How many?", class: "form-control", min: 1 %>
+                <div class="input-group-btn">
+                  <%= hidden_field_tag :product_id, product.id %>
+                  <%= submit_tag "Add to Cart", class: "btn btn-primary" %>
+                </div>
+               </div>
+              <% end %>
+            </p>
+        </tr>
+      </div> 
+     </tbody>  
+   </div> 
+  <% end %>
+</div>
