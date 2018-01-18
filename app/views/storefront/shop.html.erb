@@ -1,8 +1,7 @@
-    <div class="jumbotron">
-    
-      <h1>Spa Kit Products</h1>
-      <h2>Made with natural ingredients!</h2>
-    </div>
+<div class="jumbotron">
+    <h1>Spa Kit Products</h1>
+    <h2>Made with natural ingredients!</h2>
+</div>
 
   <div class="row">
     <div class="col-md-4">
@@ -23,31 +22,27 @@
     </div>
   </div>
 
-<div class="row">
-  <% @products.each do |product| %>
-    <div class="col-md-6">
-  <!--   <tbody>
+    <div class="row">
+      <% @products.each do |product| %>
+        <div class="col-md-6">
+         <tbody>
     
-      <div class="well center-it"> 
-        <tr>  -->
-            <h2><%= product.name %></h2>   
-            <p><%= product.description %></p><br>
-            <p>Price: <%= number_to_currency product.price %></p><br>
+          <div class="well center-it"> 
+            <tr>  
+                <h2><%= product.name %></h2>   
+                <p><%= product.description %></p><br>
+                <p>Price: <%= number_to_currency product.price %></p><br>
 
-            <p>
-              <%= form_tag add_to_cart_path do %>
-               <div class="input-group">
-                <%= number_field_tag :quantity, nil, placeholder: "How many?" %>
-                <div class="input-group-btn">
-                  <%= hidden_field_tag :product_id, product.id %>
-                  <%= submit_tag "Add to Cart", class: "btn btn-primary" %>
-                </div>
-               </div>
-              <% end %>
-            </p>
-    <!--    </tr>
-      </div>
-     </tbody>   -->
-   </div> 
-  <% end %>
-</div>
+                <p>
+                  <%= form_tag add_to_cart_path do %>
+                    <%= hidden_field_tag :product_id, product.id %>
+                    <%= number_field_tag :quantity, nil, placeholder: "How many?" %>
+                    <%= submit_tag "Add to Cart", class: "btn btn-primary" %>
+                  <% end %>
+                </p>
+            </tr>
+          </div>
+         </tbody>   
+        </div> 
+      <% end %>
+    </div>

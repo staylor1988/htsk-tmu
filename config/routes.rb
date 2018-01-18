@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   get 'checkout' => 'cart#checkout'
   
   get 'empty_cart' => 'cart#empty_cart'
-
+  
   devise_for :users
   
   root 'storefront#home'

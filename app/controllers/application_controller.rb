@@ -1,5 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
+  before_action :categories
+
   
   before_action :authenticate_user!
 
@@ -18,5 +20,8 @@ class ApplicationController < ActionController::Base
   def configure_permitted_parameters
    devise_parameter_sanitizer.permit(:sign_up, keys: [:role])
    devise_parameter_sanitizer.permit(:account_update, keys: [:role])
+  end
+  def categories
+    @categories = Category.order(:name)
   end
 end
