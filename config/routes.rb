@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+  
+  resources :posts
   post 'order_complete' => 'cart#order_complete'
   
   post 'add_to_cart' => 'cart#add_to_cart'
@@ -23,5 +26,6 @@ Rails.application.routes.draw do
   
   resources :cart
   resources :products
+  
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

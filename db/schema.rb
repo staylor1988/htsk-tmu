@@ -10,12 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171223233501) do
+ActiveRecord::Schema.define(version: 20180122173630) do
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "comments", force: :cascade do |t|
+    t.string "author"
+    t.text "comment_entry"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "post_id"
   end
 
   create_table "line_items", force: :cascade do |t|
@@ -33,6 +41,14 @@ ActiveRecord::Schema.define(version: 20171223233501) do
     t.decimal "grand_total"
     t.integer "user_id"
     t.text "order_items"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "posts", force: :cascade do |t|
+    t.string "title"
+    t.string "author"
+    t.text "blog_entry"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

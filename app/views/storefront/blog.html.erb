@@ -1,17 +1,6 @@
 <div class="jumbotron">
-  <h1>Please feel free to check out our social media pages!</h1>
+  <h1>Blog Posts</h1>
 </div>
-
-<h1>
-For our Facebook Business page, just click the icon link below to be redirected: <br>
- <div class="wrapper">
- 
-  <a class="fa fa-5x fa-facebook-square" href="https://www.facebook.com/" target="_blank"></a><br>
- 
-  Don't forget to like our page!
-</div>
-</h1>
-
 
 <h1>
 For our Youtube channel, just click the icon link below to be redirected: <br>
@@ -23,3 +12,23 @@ For our Youtube channel, just click the icon link below to be redirected: <br>
   
 </div>
 </h1>
+
+<div class="row">
+  <% @posts.each do |post| %>
+    <div class="col-md-6">
+      <tbody>
+      	<div class="well center-it"> 
+          <tr>
+           <h2><%= post.title %></h2><br>
+           <p><em>posted on <%= post.created_at.strftime("%B %e, %Y") %></em></p><br>
+           <td><%= post.blog_entry %></td>
+          </tr>
+        </div>
+      </tbody>
+    </div>
+   <% end %>
+  
+</div>
+
+<br>
+

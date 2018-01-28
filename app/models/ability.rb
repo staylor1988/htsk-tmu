@@ -7,7 +7,18 @@ class Ability
     elsif user.guest?
        can :show, Product
     end
- 
+    
+    if user.admin?
+        can :manage, Post
+    elsif user.guest?
+        can :show, Post
+    end
+    
+    if user.admin?
+        can :manage, :rails_admin
+        can :read, :dashboard
+    end
+        
     # Define abilities for the passed in user here. For example:
     #
     #   user ||= User.new # guest user (not logged in)

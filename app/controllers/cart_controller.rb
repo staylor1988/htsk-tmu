@@ -54,7 +54,7 @@ class CartController < ApplicationController
           @order.save
 
           @order.update(sales_tax: (@order.subtotal * 0.08))
-          @order.update(grand_total: (@order.sales_tax + @order.subtotal))
+          @order.update(grand_total: (@order.sales_tax + @order.subtotal + 7.75))
 
           @order.line_items.destroy_all
 

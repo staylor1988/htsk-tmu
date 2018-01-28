@@ -3,7 +3,7 @@
 </div>
 
 <h2>Below is a summary of your order:</h2><br>
-<h2>* Note: Shipping is not included in this total. *
+
 
 <% @order.order_items.each do |k,v| %>
   <ul>
@@ -18,6 +18,10 @@
 
 <p>
   <strong>Sales Tax: </strong><%= number_to_currency @order.sales_tax %> 
+</p>
+
+<p>
+  <strong>Shipping: </strong> $ 7.75 
 </p>
 
 <p>

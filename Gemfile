@@ -9,7 +9,7 @@ end
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.4'
 ruby '2.4.1'
-
+gem 'rails_admin', '~> 1.2'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
@@ -29,7 +29,8 @@ gem 'cancancan'
 gem 'pry-rails' #for rails c
 gem 'better_errors', group: :development
 gem 'binding_of_caller' #works with better errors to see 
-                        #instance variable values    
+                        #instance variable values 
+   
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
