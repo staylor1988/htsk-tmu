@@ -8,7 +8,7 @@ class CartController < ApplicationController
     customer = Stripe::Customer.create(
       :email => params[:stripeEmail],
       :card => params[:stripeToken],
-      :address => params[:stripeShipping]
+      
     )
 
     charge = Stripe::Charge.create(
