@@ -6,8 +6,9 @@ class CartController < ApplicationController
     @amount = (@order.grand_total.to_f.round(2) * 100).to_i
 
     customer = Stripe::Customer.create(
-      :email => current_user.email,
-      :card => params[:stripeToken]
+      :email => params[:stripeEmail],
+      :card => params[:stripeToken],
+      :address => params[:stripeShipping]
     )
 
     charge = Stripe::Charge.create(
